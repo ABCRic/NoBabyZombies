@@ -2,6 +2,7 @@ package me.abcric.bukkit.nobabyzombies;
 
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
+import org.bukkit.entity.Husk;
 import org.bukkit.entity.Zombie;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -22,6 +23,8 @@ public class NoBabyZombies extends JavaPlugin implements Listener {
 		Entity ent = event.getEntity();
 		if (ent.getType() == EntityType.ZOMBIE && ((Zombie) ent).isBaby()) {
 			((Zombie) ent).setBaby(false);
+		} else if(ent.getType() == EntityType.HUSK && ((Husk) ent).isBaby()) {
+			((Husk) ent).setBaby(false);
 		}
 	}
 }
