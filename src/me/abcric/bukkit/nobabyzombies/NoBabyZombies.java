@@ -1,5 +1,6 @@
 package me.abcric.bukkit.nobabyzombies;
 
+import org.bukkit.entity.Drowned;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Husk;
@@ -25,6 +26,8 @@ public class NoBabyZombies extends JavaPlugin implements Listener {
 			((Zombie) ent).setBaby(false);
 		} else if(ent.getType() == EntityType.HUSK && ((Husk) ent).isBaby()) {
 			((Husk) ent).setBaby(false);
+		} else if(ent.getType() == EntityType.DROWNED && ((Drowned) ent).isBaby()) {
+			((Drowned) ent).setBaby(false);
 		}
 	}
 }
